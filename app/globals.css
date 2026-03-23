@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(circle at top center, rgba(229, 9, 20, 0.18), transparent 26%),
+    radial-gradient(circle at 85% 15%, rgba(124, 13, 19, 0.24), transparent 18%),
+    linear-gradient(160deg, #020202 0%, #090909 38%, #0d1117 72%, #070809 100%);
+  font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(229, 9, 20, 0.4);
+  color: #ffffff;
+}
+
+blockquote {
+  border-left: 0.25rem solid #e50914;
+  padding-left: 1rem;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: 'Baskerville Old Face', 'Book Antiqua', 'Palatino Linotype', serif;
+}
