@@ -7,11 +7,11 @@ export default function CaseStudiesPage() {
   return (
     <div>
       <Navbar />
-      <main className="mx-auto max-w-6xl px-4 py-10 text-white sm:px-6">
+      <main className="theme-text-primary mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <header className="mb-8 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-red-500">Case Studies</p>
           <h1 className="text-4xl font-black">Real Campaign Impact Stories</h1>
-          <p className="text-gray-300">Detailed campaign execution outcomes focusing on reach, engagement, and voter conversion.</p>
+          <p className="theme-text-secondary">Detailed campaign execution outcomes focusing on reach, engagement, and voter conversion.</p>
         </header>
 
         <section className="grid gap-6 lg:grid-cols-3">
@@ -32,9 +32,9 @@ export default function CaseStudiesPage() {
           />
         </section>
 
-        <section className="mt-10 rounded-2xl border border-white/10 bg-black/70 p-6 text-center">
+        <section className="theme-panel-strong mt-10 rounded-2xl border p-6 text-center">
           <h2 className="text-2xl font-bold">Want Case Studies Aligned to Your Context?</h2>
-          <p className="mt-2 text-gray-300">We produce custom battle plans and metrics roadmaps for your polity, constituency and competition landscape.</p>
+          <p className="theme-text-secondary mt-2">We produce custom battle plans and metrics roadmaps for your polity, constituency and competition landscape.</p>
           <CTAButton label="Get Winning Strategy" href="/contact" />
         </section>
       </main>

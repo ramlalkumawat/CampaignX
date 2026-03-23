@@ -1,6 +1,22 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const themeScript = `
+  (function () {
+    try {
+      var storedTheme = localStorage.getItem('campaignx-theme');
+      var theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark';
+      var root = document.documentElement;
+      root.classList.remove('light', 'dark');
+      root.classList.add(theme);
+      root.dataset.theme = theme;
+    } catch (error) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.dataset.theme = 'dark';
+    }
+  })();
+`;
+
 export const metadata: Metadata = {
   title: 'CampaignX | Strategy. Influence. Impact.',
   description: 'Premium political campaign growth agency for candidates, built to win elections.',
@@ -15,8 +31,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
-      <body className="min-h-screen bg-campaignx-black text-white antialiased">{children}</body>
+    <html lang="en" className="h-full scroll-smooth dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="min-h-screen antialiased theme-transition">{children}</body>
     </html>
   );
 }

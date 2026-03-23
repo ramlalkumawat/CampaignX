@@ -35,17 +35,17 @@ export default function HomePage() {
     <div>
       <Navbar />
 
-      <main className="mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pt-10">
-        <section className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-black/45 px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.35)] sm:px-8 lg:px-12 lg:py-16">
+      <main className="theme-text-primary mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pt-10">
+        <section className="theme-shell relative isolate overflow-hidden rounded-[2rem] border px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.18)] sm:px-8 lg:px-12 lg:py-16">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(229,9,20,0.2),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_25%)]" />
 
           <div className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-400">CampaignX</p>
-              <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="theme-text-primary mt-5 max-w-4xl font-display text-4xl font-semibold leading-none tracking-tight sm:text-6xl lg:text-7xl">
                 We don&apos;t run campaigns. We win elections.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
+              <p className="theme-text-secondary mt-6 max-w-2xl text-lg leading-8 sm:text-xl">
                 Strategy. Influence. Impact. CampaignX helps candidates convert visibility into votes, build booth dominance, and hold narrative control from launch to victory.
               </p>
 
@@ -53,7 +53,7 @@ export default function HomePage() {
                 <CTAButton label="Book Strategy Call" href="/contact" />
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-white transition hover:border-red-400/40 hover:bg-white/5"
+                  className="theme-button-secondary inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] theme-transition"
                 >
                   Explore Services
                 </Link>
@@ -63,7 +63,7 @@ export default function HomePage() {
                 {serviceProofPoints.map((point) => (
                   <div
                     key={point}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200"
+                    className="theme-chip rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]"
                   >
                     {point}
                   </div>
@@ -71,11 +71,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur sm:p-8">
+            <div className="theme-panel rounded-[1.75rem] border p-6 backdrop-blur sm:p-8">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-red-400">Command View</p>
-                  <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white">Where the margin gets built</h2>
+                  <h2 className="theme-text-primary mt-3 font-display text-3xl font-semibold tracking-tight">Where the margin gets built</h2>
                 </div>
                 <div className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
                   Live
@@ -83,23 +83,23 @@ export default function HomePage() {
               </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-zinc-500">Priority booths</p>
-                  <p className="mt-3 font-display text-4xl font-semibold text-white">128</p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-300">Ranked by turnout risk, persuasion potential, and worker strength.</p>
+                <div className="theme-panel-strong rounded-[1.5rem] border p-5">
+                  <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.28em]">Priority booths</p>
+                  <p className="theme-text-primary mt-3 font-display text-4xl font-semibold">128</p>
+                  <p className="theme-text-secondary mt-2 text-sm leading-6">Ranked by turnout risk, persuasion potential, and worker strength.</p>
                 </div>
-                <div className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-zinc-500">Candidate recall</p>
-                  <p className="mt-3 font-display text-4xl font-semibold text-white">+18 pts</p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-300">Lift after message discipline, local media sequencing, and WhatsApp follow-ups.</p>
+                <div className="theme-panel-strong rounded-[1.5rem] border p-5">
+                  <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.28em]">Candidate recall</p>
+                  <p className="theme-text-primary mt-3 font-display text-4xl font-semibold">+18 pts</p>
+                  <p className="theme-text-secondary mt-2 text-sm leading-6">Lift after message discipline, local media sequencing, and WhatsApp follow-ups.</p>
                 </div>
-                <div className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5 sm:col-span-2">
+                <div className="theme-panel-strong rounded-[1.5rem] border p-5 sm:col-span-2">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.28em] text-zinc-500">Rapid response clock</p>
-                      <p className="mt-3 font-display text-4xl font-semibold text-white">19 min</p>
+                      <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.28em]">Rapid response clock</p>
+                      <p className="theme-text-primary mt-3 font-display text-4xl font-semibold">19 min</p>
                     </div>
-                    <div className="grid gap-2 text-right text-sm text-zinc-300">
+                    <div className="theme-text-secondary grid gap-2 text-right text-sm">
                       <span>Opposition clip flagged</span>
                       <span>Counter-message drafted</span>
                       <span>Ward leads briefed</span>
@@ -124,11 +124,11 @@ export default function HomePage() {
             {strategicEdges.map((edge) => (
               <article
                 key={edge.title}
-                className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/35"
+                className="theme-panel rounded-[1.75rem] border p-6 theme-transition hover:-translate-y-1 hover:border-red-500/35"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-red-400">Strategic Edge</p>
-                <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-white">{edge.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-300">{edge.text}</p>
+                <h3 className="theme-text-primary mt-4 font-display text-2xl font-semibold tracking-tight">{edge.title}</h3>
+                <p className="theme-text-secondary mt-4 text-base leading-7">{edge.text}</p>
               </article>
             ))}
           </div>
@@ -150,19 +150,19 @@ export default function HomePage() {
           <div className="mt-8">
             <Link
               href="/services#case-studies"
-              className="inline-flex items-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:border-red-400/40 hover:bg-white/5"
+              className="theme-button-secondary inline-flex items-center rounded-full border px-5 py-3 text-sm font-semibold uppercase tracking-[0.22em] theme-transition"
             >
               See More Case Studies
             </Link>
           </div>
         </section>
 
-        <section className="mt-24 rounded-[2rem] border border-red-500/25 bg-[linear-gradient(135deg,rgba(229,9,20,0.2),rgba(229,9,20,0.05),rgba(255,255,255,0.04))] px-6 py-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.25)] sm:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-200">Ready To Move</p>
-          <h2 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <section className="theme-panel-accent mt-24 rounded-[2rem] border px-6 py-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.15)] sm:px-8">
+          <p className="theme-accent-soft text-xs font-semibold uppercase tracking-[0.4em]">Ready To Move</p>
+          <h2 className="theme-text-primary mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             Every delayed decision gives the other side more space.
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-100">
+          <p className="theme-text-secondary mx-auto mt-5 max-w-3xl text-lg leading-8">
             If you want a sharper image, tighter booth control, and a campaign structure built to win, CampaignX is ready.
           </p>
           <div className="mt-8">

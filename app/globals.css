@@ -2,16 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+html.dark {
   color-scheme: dark;
-}
-
-body {
-  background:
+  --page-background:
     radial-gradient(circle at top center, rgba(229, 9, 20, 0.18), transparent 26%),
     radial-gradient(circle at 85% 15%, rgba(124, 13, 19, 0.24), transparent 18%),
     linear-gradient(160deg, #020202 0%, #090909 38%, #0d1117 72%, #070809 100%);
+  --surface-shell: rgba(6, 7, 10, 0.72);
+  --surface-panel: rgba(255, 255, 255, 0.04);
+  --surface-panel-strong: rgba(8, 10, 14, 0.66);
+  --surface-panel-soft: rgba(255, 255, 255, 0.03);
+  --surface-navbar: rgba(5, 5, 5, 0.74);
+  --surface-footer: rgba(4, 4, 4, 0.94);
+  --surface-input: rgba(15, 20, 25, 0.92);
+  --surface-chip: rgba(255, 255, 255, 0.04);
+  --surface-button-secondary: rgba(255, 255, 255, 0.03);
+  --surface-accent: linear-gradient(135deg, rgba(229, 9, 20, 0.2), rgba(229, 9, 20, 0.05), rgba(255, 255, 255, 0.04));
+  --surface-toggle: rgba(255, 255, 255, 0.04);
+  --text-primary: #ffffff;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --accent-soft: #fecaca;
+  --border-primary: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(229, 9, 20, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --success-text: #86efac;
+  --success-bg: #16a34a;
+  --success-bg-hover: #22c55e;
+}
+
+html.light {
+  color-scheme: light;
+  --page-background:
+    radial-gradient(circle at top center, rgba(229, 9, 20, 0.1), transparent 25%),
+    radial-gradient(circle at 82% 14%, rgba(185, 28, 28, 0.12), transparent 18%),
+    linear-gradient(160deg, #fffdf9 0%, #f4eee7 45%, #ebe5df 100%);
+  --surface-shell: rgba(255, 255, 255, 0.74);
+  --surface-panel: rgba(255, 255, 255, 0.82);
+  --surface-panel-strong: rgba(255, 255, 255, 0.92);
+  --surface-panel-soft: rgba(255, 255, 255, 0.72);
+  --surface-navbar: rgba(255, 251, 247, 0.8);
+  --surface-footer: rgba(244, 238, 231, 0.96);
+  --surface-input: rgba(255, 255, 255, 0.95);
+  --surface-chip: rgba(185, 28, 28, 0.08);
+  --surface-button-secondary: rgba(17, 24, 39, 0.03);
+  --surface-accent: linear-gradient(135deg, rgba(229, 9, 20, 0.16), rgba(229, 9, 20, 0.04), rgba(255, 255, 255, 0.88));
+  --surface-toggle: rgba(17, 24, 39, 0.04);
+  --text-primary: #1b1c1f;
+  --text-secondary: #3f4854;
+  --text-muted: #6b7280;
+  --accent-soft: #991b1b;
+  --border-primary: rgba(17, 24, 39, 0.12);
+  --border-soft: rgba(17, 24, 39, 0.08);
+  --border-accent: rgba(185, 28, 28, 0.22);
+  --shadow-color: rgba(17, 24, 39, 0.12);
+  --success-text: #047857;
+  --success-bg: #16a34a;
+  --success-bg-hover: #15803d;
+}
+
+body {
+  background: var(--page-background);
+  color: var(--text-primary);
   font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
 a {
@@ -38,4 +94,126 @@ h2,
 h3,
 .font-display {
   font-family: 'Baskerville Old Face', 'Book Antiqua', 'Palatino Linotype', serif;
+}
+
+@layer utilities {
+  .theme-transition {
+    transition:
+      background-color 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .theme-shell {
+    background: var(--surface-shell);
+    border-color: var(--border-primary);
+  }
+
+  .theme-panel {
+    background: var(--surface-panel);
+    border-color: var(--border-primary);
+  }
+
+  .theme-border {
+    border-color: var(--border-primary);
+  }
+
+  .theme-border-soft {
+    border-color: var(--border-soft);
+  }
+
+  .theme-panel-strong {
+    background: var(--surface-panel-strong);
+    border-color: var(--border-primary);
+  }
+
+  .theme-panel-soft {
+    background: var(--surface-panel-soft);
+    border-color: var(--border-soft);
+  }
+
+  .theme-panel-accent {
+    background: var(--surface-accent);
+    border-color: var(--border-accent);
+  }
+
+  .theme-navbar {
+    background: var(--surface-navbar);
+    border-color: var(--border-primary);
+  }
+
+  .theme-footer {
+    background: var(--surface-footer);
+    border-color: var(--border-primary);
+  }
+
+  .theme-input {
+    background: var(--surface-input);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+  }
+
+  .theme-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .theme-chip {
+    background: var(--surface-chip);
+    border-color: var(--border-soft);
+    color: var(--text-secondary);
+  }
+
+  .theme-button-secondary {
+    background: var(--surface-button-secondary);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+  }
+
+  .theme-button-secondary:hover {
+    background: var(--surface-panel);
+    border-color: var(--border-accent);
+  }
+
+  .theme-toggle {
+    background: var(--surface-toggle);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--border-accent);
+    background: var(--surface-panel);
+  }
+
+  .theme-text-primary {
+    color: var(--text-primary);
+  }
+
+  .theme-text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .theme-text-muted {
+    color: var(--text-muted);
+  }
+
+  .theme-accent-soft {
+    color: var(--accent-soft);
+  }
+
+  .theme-success-text {
+    color: var(--success-text);
+  }
+
+  .theme-whatsapp {
+    background: var(--success-bg);
+    color: #ffffff;
+  }
+
+  .theme-whatsapp:hover {
+    background: var(--success-bg-hover);
+  }
 }

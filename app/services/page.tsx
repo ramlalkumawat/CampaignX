@@ -36,16 +36,16 @@ export default function ServicesPage() {
     <div>
       <Navbar />
 
-      <main className="mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pt-10">
-        <section className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-black/50 px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.35)] sm:px-8 lg:px-12 lg:py-16">
+      <main className="theme-text-primary mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pt-10">
+        <section className="theme-shell relative isolate overflow-hidden rounded-[2rem] border px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.18)] sm:px-8 lg:px-12 lg:py-16">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,_rgba(229,9,20,0.18),_transparent_28%),radial-gradient(circle_at_right,_rgba(255,255,255,0.06),_transparent_20%)]" />
 
           <div className="relative">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-400">Services</p>
-            <h1 className="mt-5 max-w-5xl font-display text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+            <h1 className="theme-text-primary mt-5 max-w-5xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
               End-to-End Political Campaign Management
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">
+            <p className="theme-text-secondary mt-6 max-w-3xl text-lg leading-8 sm:text-xl">
               From strategy to victory &mdash; we manage your entire political journey
             </p>
 
@@ -53,7 +53,7 @@ export default function ServicesPage() {
               <CTAButton label="Book Strategy Call" href="/contact" />
               <Link
                 href="#service-phases"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-white transition hover:border-red-400/40 hover:bg-white/5"
+                className="theme-button-secondary inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] theme-transition"
               >
                 Explore The 4 Phases
               </Link>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
               {serviceProofPoints.map((point) => (
                 <div
                   key={point}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200"
+                  className="theme-chip rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]"
                 >
                   {point}
                 </div>
@@ -74,10 +74,10 @@ export default function ServicesPage() {
               {heroSignals.map((signal) => (
                 <article
                   key={signal.title}
-                  className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 backdrop-blur transition duration-300 hover:border-red-500/35"
+                  className="theme-panel rounded-[1.5rem] border p-5 backdrop-blur theme-transition hover:border-red-500/35"
                 >
-                  <h2 className="font-display text-2xl font-semibold tracking-tight text-white">{signal.title}</h2>
-                  <p className="mt-3 text-base leading-7 text-zinc-300">{signal.text}</p>
+                  <h2 className="theme-text-primary font-display text-2xl font-semibold tracking-tight">{signal.title}</h2>
+                  <p className="theme-text-secondary mt-3 text-base leading-7">{signal.text}</p>
                 </article>
               ))}
             </div>
@@ -126,12 +126,12 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-24 rounded-[2rem] border border-red-500/25 bg-[linear-gradient(135deg,rgba(229,9,20,0.2),rgba(229,9,20,0.05),rgba(255,255,255,0.04))] px-6 py-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.25)] sm:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-200">Final CTA</p>
-          <h2 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <section className="theme-panel-accent mt-24 rounded-[2rem] border px-6 py-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.15)] sm:px-8">
+          <p className="theme-accent-soft text-xs font-semibold uppercase tracking-[0.4em]">Final CTA</p>
+          <h2 className="theme-text-primary mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             Ready to Win Your Election?
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-zinc-100">
+          <p className="theme-text-secondary mx-auto mt-5 max-w-3xl text-lg leading-8">
             Let&apos;s build your winning strategy.
           </p>
           <div className="mt-8">
