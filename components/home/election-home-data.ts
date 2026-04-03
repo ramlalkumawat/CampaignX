@@ -1,15 +1,15 @@
 export const electionFocus = [
-  'Sarpanch election campaigns',
-  'Nagar Palika campaign management',
-  'Nagar Parishad election strategy',
-  'Nagar Nigam digital war rooms',
+  'Village and panchayat races',
+  'Town and municipal campaigns',
+  'Ward-level outreach planning',
+  'Rapid-response digital support',
 ];
 
 export const trustSignals = [
-  'Election Campaign Management India',
-  'Political Campaign Services Rajasthan',
-  'Booth Level Campaign Management',
-  'Ground + digital campaign integration',
+  'Strategy-led campaigns',
+  'Ground + digital alignment',
+  'Booth-level discipline',
+  'Fast campaign response',
 ];
 
 export const whoWeArePoints = [

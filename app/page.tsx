@@ -21,7 +21,7 @@ export default function HomePage() {
     name: 'CampaignX',
     slogan: 'Strategy. Influence. Impact.',
     description:
-      'CampaignX is an election campaign management company in India focused on digital election strategy, booth-level campaign management, and political campaign services for local body elections.',
+      'CampaignX is an end-to-end digital, IT, and political campaign solution provider offering software, websites, Android apps, CRM war rooms, social media marketing, branding, and campaign execution services.',
     areaServed: 'India',
     telephone: campaignContact.phoneDisplay,
     email: campaignContact.email,
@@ -30,6 +30,19 @@ export default function HomePage() {
       'Political Campaign Services Rajasthan',
       'Digital Election Strategy',
       'Booth Level Campaign Management',
+      'MP Election Campaign Management',
+      'MLA Election Campaign Management',
+      'Design & Creative',
+      'Digital Marketing',
+      'Data Science & Analytics',
+      'Campaign Execution',
+      'Software & IT Solutions',
+      'Website Design & Development',
+      'Android Application Development',
+      'CRM War Room Software',
+      'Social Media Marketing',
+      'Online Reputation Management & Branding',
+      'Campaign Songs & Documentary Production',
     ],
   };
 

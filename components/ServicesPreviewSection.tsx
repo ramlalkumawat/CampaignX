@@ -18,7 +18,7 @@ export default function ServicesPreviewSection() {
               />
 
               <div className="theme-panel mt-8 max-w-md rounded-[1.6rem] border p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.34em] text-red-400">Campaign Logic</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-red-400">Campaign Logic</p>
                 <p className="theme-text-primary mt-4 font-display text-2xl font-semibold tracking-[-0.04em]">
                   One partner. Four phases. Zero drift.
                 </p>
@@ -44,7 +44,7 @@ export default function ServicesPreviewSection() {
                         <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] border border-red-500/25 bg-red-500/10 text-red-300">
                           <Icon className="h-6 w-6" />
                         </div>
-                        <span className="theme-text-muted text-[11px] font-semibold uppercase tracking-[0.35em]">
+                        <span className="theme-text-muted text-[11px] font-semibold uppercase tracking-[0.12em]">
                           {phase.phase}
                         </span>
                       </div>
@@ -54,12 +54,12 @@ export default function ServicesPreviewSection() {
                       </h3>
                       <p className="theme-text-secondary mt-3 text-sm leading-6">{phase.preview}</p>
 
-                      <p className="theme-accent-soft mt-5 text-xs font-semibold uppercase tracking-[0.3em]">Impact</p>
+                      <p className="theme-accent-soft mt-5 text-xs font-semibold uppercase tracking-[0.14em]">Impact</p>
                       <p className="theme-text-primary mt-2 text-sm leading-6">{phase.outcomes[0]}</p>
 
                       <Link
                         href={`/services#${phase.id}`}
-                        className="theme-accent-soft mt-6 inline-flex items-center text-sm font-semibold uppercase tracking-[0.25em] theme-transition group-hover:text-[var(--text-primary)]"
+                        className="theme-accent-soft mt-6 inline-flex items-center text-sm font-semibold uppercase tracking-[0.12em] theme-transition group-hover:text-[var(--text-primary)]"
                       >
                         Learn More
                       </Link>
@@ -79,7 +79,7 @@ export default function ServicesPreviewSection() {
               </p>
               <Link
                 href="/services"
-                className="theme-button-secondary inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold uppercase tracking-[0.25em] theme-transition"
+                className="theme-button-secondary inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] theme-transition"
               >
                 View All Services
               </Link>

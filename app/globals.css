@@ -66,10 +66,12 @@ html.light {
 body {
   background: var(--page-background);
   color: var(--text-primary);
-  font-family: 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-poppins), 'Poppins', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.72;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background 0.35s ease, color 0.35s ease;
 }
 
@@ -103,11 +105,13 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 .font-display {
-  font-family: 'Poppins', 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.015em;
-  line-height: 1.15;
+  font-family: var(--font-poppins), 'Poppins', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.004em;
+  line-height: 1.12;
 }
 
 p,
@@ -117,12 +121,13 @@ input,
 textarea,
 select {
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.72;
 }
 
 button,
 a {
-  font-family: 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-poppins), 'Poppins', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
 }
 
 strong,
@@ -131,6 +136,20 @@ b {
 }
 
 @layer utilities {
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-y, 28px), 0) scale(var(--reveal-scale, 0.98));
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-on-scroll[data-visible='true'] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
   .theme-transition {
     transition:
       background-color 0.3s ease,
@@ -249,5 +268,14 @@ b {
 
   .theme-whatsapp:hover {
     background: var(--success-bg-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

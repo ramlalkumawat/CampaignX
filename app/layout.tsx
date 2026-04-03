@@ -1,6 +1,16 @@
 import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import './globals.css';
-import { campaignKeywords } from '@/components/site-config';
+import AutoScrollButton from '@/components/AutoScrollButton';
+import { LanguageProvider } from '@/components/LanguageProvider';
+import { campaignKeywords, siteUrl } from '@/components/site-config';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 const themeScript = `
   (function () {
@@ -23,6 +33,7 @@ export const metadata: Metadata = {
     default: 'CampaignX | Election Campaign Management India',
     template: '%s | CampaignX',
   },
+  metadataBase: new URL(siteUrl),
   description:
     'CampaignX helps Sarpanch, Nagar Palika, Nagar Parishad, and Nagar Nigam candidates win with booth-level strategy, digital campaigning, and political campaign execution.',
   keywords: campaignKeywords,
@@ -50,15 +61,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="h-full scroll-smooth dark" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
-        />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen font-sans antialiased theme-transition">{children}</body>
+      <body className={`${poppins.variable} min-h-screen font-sans antialiased theme-transition`}>
+        <LanguageProvider>
+          {children}
+          <AutoScrollButton />
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

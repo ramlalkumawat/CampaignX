@@ -17,8 +17,8 @@ const config: Config = {
         glow: '0 0 20px rgba(229, 9, 20, 0.35)',
       },
       fontFamily: {
-        sans: ['Inter', 'Segoe UI', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'Segoe UI', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-poppins)', 'Poppins', 'Segoe UI', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-poppins)', 'Poppins', 'Segoe UI', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

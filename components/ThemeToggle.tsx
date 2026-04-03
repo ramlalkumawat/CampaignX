@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import { useLanguage } from '@/components/LanguageProvider';
+
 type Theme = 'dark' | 'light';
 
 const STORAGE_KEY = 'campaignx-theme';
@@ -32,6 +34,7 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ className = '', compact = false }: ThemeToggleProps) {
   const [theme, setTheme] = useState<Theme>('dark');
+  const { language } = useLanguage();
 
   useEffect(() => {
     setTheme(getTheme());
@@ -52,15 +55,26 @@ export default function ThemeToggle({ className = '', compact = false }: ThemeTo
     }
   };
 
-  const label = `Switch to ${nextTheme} mode`;
+  const copy =
+    language === 'hi'
+      ? {
+          label: `Switch to ${nextTheme === 'light' ? 'light' : 'dark'} mode`,
+          light: 'लाइट',
+          dark: 'डार्क',
+        }
+      : {
+          label: `Switch to ${nextTheme} mode`,
+          light: 'Light',
+          dark: 'Dark',
+        };
 
   return (
     <button
       type="button"
       onClick={handleToggle}
-      aria-label={label}
-      title={label}
-      className={`theme-toggle inline-flex items-center rounded-full border text-sm font-medium uppercase tracking-[0.2em] theme-transition ${compact ? 'justify-center gap-0 px-0 py-0' : 'gap-2 px-3 py-2'} ${className}`}
+      aria-label={copy.label}
+      title={copy.label}
+      className={`theme-toggle inline-flex items-center rounded-full border text-sm font-medium uppercase tracking-[0.1em] theme-transition ${compact ? 'justify-center gap-0 px-0 py-0' : 'gap-2 px-3 py-2'} ${className}`}
     >
       <span className="flex h-5 w-5 items-center justify-center">
         {theme === 'dark' ? (
@@ -74,7 +88,7 @@ export default function ThemeToggle({ className = '', compact = false }: ThemeTo
           </svg>
         )}
       </span>
-      {!compact && <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>}
+      {!compact && <span>{theme === 'dark' ? copy.light : copy.dark}</span>}
     </button>
   );
 }

@@ -22,7 +22,7 @@ export default function ServicePhaseCard({ phase }: ServicePhaseCardProps) {
               <Icon className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-red-400">{phase.phase}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-red-400">{phase.phase}</p>
               <p className="theme-text-muted mt-1 text-sm font-medium">{phase.preview}</p>
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function ServicePhaseCard({ phase }: ServicePhaseCardProps) {
           <p className="theme-text-secondary mt-4 max-w-2xl text-base leading-7">{phase.description}</p>
 
           <div className="mt-8">
-            <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.35em]">Execution</p>
+            <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.12em]">Execution</p>
             <ul className="theme-text-secondary mt-4 space-y-3 text-sm leading-6 sm:text-base">
               {phase.execution.map((item) => (
                 <li key={item} className="flex gap-3">
@@ -48,7 +48,7 @@ export default function ServicePhaseCard({ phase }: ServicePhaseCardProps) {
         </div>
 
         <div className="theme-panel-strong rounded-[1.75rem] border p-5 sm:p-6">
-          <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.35em]">Key Outcomes</p>
+          <p className="theme-text-muted text-xs font-semibold uppercase tracking-[0.12em]">Key Outcomes</p>
           <div className="mt-5 space-y-4">
             {phase.outcomes.map((item) => (
               <div key={item} className="theme-panel-soft rounded-2xl border p-4">

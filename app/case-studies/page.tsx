@@ -1,44 +1,5 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import CaseStudyCard from '@/components/CaseStudyCard';
-import CTAButton from '@/components/CTAButton';
+import CaseStudiesPageContent from '@/components/pages/CaseStudiesPageContent';
 
 export default function CaseStudiesPage() {
-  return (
-    <div>
-      <Navbar />
-      <main className="theme-text-primary mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <header className="mb-8 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-red-500">Case Studies</p>
-          <h1 className="font-display text-4xl font-semibold tracking-[0.01em]">Real Campaign Impact Stories</h1>
-          <p className="theme-text-secondary">Detailed campaign execution outcomes focusing on reach, engagement, and voter conversion.</p>
-        </header>
-
-        <section className="grid gap-6 lg:grid-cols-3">
-          <CaseStudyCard
-            title="Metro MP Turnaround"
-            summary="Our analytics identified underperforming wards and reallocated resources to 3 undermatched booths."
-            metrics="Reach 1.4M, Engagement 47%, conversion +19% (win margin 8%)"
-          />
-          <CaseStudyCard
-            title="Rural MLA Consolidation"
-            summary="We combined issue-based ground campaigns with community micro-targeting to convert swing blocs."
-            metrics="Reach 650K, Engagement 33%, conversion +14% (win margin 5%)"
-          />
-          <CaseStudyCard
-            title="Local Leader Mobilization"
-            summary="In 30 days, built a volunteer-led digital fund drive for voter advocacy and turnout operations."
-            metrics="Reach 12.2K, Engagement 76%, conversion +40% (vote share 62%)"
-          />
-        </section>
-
-        <section className="theme-panel-strong mt-10 rounded-2xl border p-6 text-center">
-          <h2 className="font-display text-2xl font-semibold tracking-[0.01em]">Want Case Studies Aligned to Your Context?</h2>
-          <p className="theme-text-secondary mt-2">We produce custom battle plans and metrics roadmaps for your polity, constituency and competition landscape.</p>
-          <CTAButton label="Get Winning Strategy" href="/contact" />
-        </section>
-      </main>
-      <Footer />
-    </div>
-  );
+  return <CaseStudiesPageContent />;
 }
