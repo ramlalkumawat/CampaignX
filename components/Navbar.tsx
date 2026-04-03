@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { useLanguage } from '@/components/LanguageProvider';
@@ -47,55 +47,67 @@ export default function Navbar() {
           toggleNavigation: 'Toggle navigation',
         };
 
-  return (
-    <header className="theme-navbar sticky top-0 z-50 border-b backdrop-blur-xl theme-transition">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href="/" className="min-w-0 theme-text-primary">
-          <p className="font-display text-2xl font-semibold tracking-[0.06em] text-red-500">CampaignX</p>
-          <p className="theme-text-muted truncate text-[11px] font-semibold uppercase tracking-[0.14em] sm:text-xs">
-            {copy.brandLine}
-          </p>
-        </Link>
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [pathname]);
 
-        <div className="flex items-center gap-2 sm:hidden">
-          <LanguageSwitcher compact />
-          <ThemeToggle compact />
-          <button
-            onClick={() => setIsExpanded((v) => !v)}
-            className="theme-toggle inline-flex items-center justify-center rounded-full border px-3 py-2 text-sm theme-transition"
-            aria-label={copy.toggleNavigation}
-          >
-            ☰
-          </button>
+  const navItemClassName = (href: string) =>
+    `rounded-full px-4 py-2 uppercase tracking-[0.1em] transition ${
+      isActive(href)
+        ? 'theme-panel theme-text-primary'
+        : 'theme-text-secondary hover:bg-[var(--surface-panel)] hover:text-[var(--text-primary)]'
+    }`;
+
+  return (
+    <header className="site-header theme-navbar sticky top-0 z-50 border-b backdrop-blur-xl theme-transition">
+      <div className="site-header-bar mx-auto max-w-7xl">
+        <div className="site-header-brand">
+          <Link href="/" className="block min-w-0 theme-text-primary">
+            <p className="site-header-brand-title font-display font-semibold tracking-[0.06em] text-red-500">CampaignX</p>
+            <p className="site-header-brand-tagline theme-text-muted truncate font-semibold uppercase tracking-[0.14em]">
+              {copy.brandLine}
+            </p>
+          </Link>
         </div>
 
-        <nav className="hidden items-center gap-2 text-sm font-medium sm:flex">
-          {copy.navItems.map((item) => (
+        <div className="site-header-controls">
+          <nav className="site-header-desktop-nav hidden items-center text-sm font-medium xl:flex">
+            {copy.navItems.map((item) => (
+              <Link key={item.href} href={item.href} className={navItemClassName(item.href)}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-2 xl:flex">
+            <LanguageSwitcher compact className="site-header-language" />
+            <ThemeToggle compact className="site-header-icon-button h-10 w-10" />
             <Link
-              key={item.href}
-              href={item.href}
-              className={`rounded-full px-4 py-2 uppercase tracking-[0.1em] transition ${
-                isActive(item.href)
-                  ? 'theme-panel theme-text-primary'
-                  : 'theme-text-secondary hover:bg-[var(--surface-panel)] hover:text-[var(--text-primary)]'
-              }`}
+              href="/contact"
+              className="inline-flex items-center rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 uppercase tracking-[0.12em] theme-accent-soft theme-transition hover:border-red-300 hover:bg-red-500/20 hover:text-white"
             >
-              {item.label}
+              {copy.consultation}
             </Link>
-          ))}
-          <LanguageSwitcher compact />
-          <ThemeToggle />
-          <Link
-            href="/contact"
-            className="ml-2 inline-flex items-center rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 uppercase tracking-[0.12em] theme-accent-soft theme-transition hover:border-red-300 hover:bg-red-500/20 hover:text-white"
-          >
-            {copy.consultation}
-          </Link>
-        </nav>
+          </div>
+
+          <div className="site-header-mobile-controls flex items-center gap-2 xl:hidden">
+            <ThemeToggle compact className="site-header-icon-button h-10 w-10" />
+            <button
+              type="button"
+              onClick={() => setIsExpanded((v) => !v)}
+              className="site-header-icon-button theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border text-sm theme-transition"
+              aria-label={copy.toggleNavigation}
+              aria-expanded={isExpanded}
+            >
+              ☰
+            </button>
+          </div>
+        </div>
       </div>
 
       {isExpanded && (
-        <div className="theme-navbar space-y-2 border-t px-4 py-4 sm:hidden">
+        <div className="site-header-menu-panel theme-navbar space-y-2 border-t xl:hidden">
+          <LanguageSwitcher compact className="site-header-language mb-3" />
           {copy.navItems.map((item) => (
             <Link
               key={item.href}
