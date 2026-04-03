@@ -5,12 +5,13 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import ThemeToggle from '@/components/ThemeToggle';
+import { campaignContact } from '@/components/site-config';
 
 const navItems = [
   { label: 'Home', href: '/' },
+  { label: 'Who We Are', href: '/#who-we-are' },
   { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
-  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Plans', href: '/#plans' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -39,7 +40,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <nav className="hidden items-center gap-2 text-sm font-semibold sm:flex">
+        <nav className="hidden items-center gap-2 text-sm font-medium sm:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -58,7 +59,7 @@ export default function Navbar() {
             href="/contact"
             className="ml-2 inline-flex items-center rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 uppercase tracking-[0.22em] theme-accent-soft theme-transition hover:border-red-300 hover:bg-red-500/20 hover:text-white"
           >
-            Book Call
+            Book Consultation
           </Link>
         </nav>
       </div>
@@ -70,7 +71,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setIsExpanded(false)}
-              className={`block rounded-2xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition ${
+              className={`block rounded-2xl px-4 py-3 text-sm font-medium uppercase tracking-[0.2em] transition ${
                 pathname === item.href
                   ? 'theme-panel theme-text-primary'
                   : 'theme-text-secondary hover:bg-[var(--surface-panel)] hover:text-[var(--text-primary)]'
@@ -79,12 +80,26 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+          <a
+            href={campaignContact.phoneHref}
+            className="theme-button-secondary block rounded-2xl border px-4 py-3 text-sm font-medium uppercase tracking-[0.2em] theme-transition"
+          >
+            Call Now
+          </a>
+          <a
+            href={campaignContact.whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            className="theme-whatsapp block rounded-2xl px-4 py-3 text-sm font-medium uppercase tracking-[0.2em] theme-transition"
+          >
+            WhatsApp
+          </a>
           <Link
             href="/contact"
             onClick={() => setIsExpanded(false)}
-            className="block rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] theme-accent-soft theme-transition hover:border-red-300 hover:bg-red-500/20 hover:text-white"
+            className="block rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium uppercase tracking-[0.2em] theme-accent-soft theme-transition hover:border-red-300 hover:bg-red-500/20 hover:text-white"
           >
-            Book Strategy Call
+            Book Consultation
           </Link>
         </div>
       )}

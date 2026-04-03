@@ -66,7 +66,10 @@ html.light {
 body {
   background: var(--page-background);
   color: var(--text-primary);
-  font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
+  font-family: 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
   transition: background 0.35s ease, color 0.35s ease;
 }
 
@@ -77,6 +80,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 ::selection {
@@ -92,8 +102,32 @@ blockquote {
 h1,
 h2,
 h3,
+h4,
 .font-display {
-  font-family: 'Baskerville Old Face', 'Book Antiqua', 'Palatino Linotype', serif;
+  font-family: 'Poppins', 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select {
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+button,
+a {
+  font-family: 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+}
+
+strong,
+b {
+  font-weight: 600;
 }
 
 @layer utilities {

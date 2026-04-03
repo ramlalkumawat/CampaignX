@@ -1,34 +1,23 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
-import CTAButton from '@/components/CTAButton';
-import CapabilityCard from '@/components/CapabilityCard';
+import ContactActions from '@/components/ContactActions';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SectionHeading from '@/components/SectionHeading';
-import ServicePhaseCard from '@/components/ServicePhaseCard';
-import VictoryStoryCard from '@/components/VictoryStoryCard';
-import { serviceCaseStudies, servicePhases, serviceProofPoints, specialCapabilities } from '@/components/services-data';
+import { serviceGroups, workProcess } from '@/components/home/election-home-data';
+import { campaignKeywords } from '@/components/site-config';
 
-const heroSignals = [
-  {
-    title: 'Winning starts before the campaign noise peaks.',
-    text: 'We shape image, trust, and narrative early so undecided voters lean your way sooner.',
-  },
-  {
-    title: 'The real election is fought booth by booth.',
-    text: 'Ground intelligence, turnout pressure, and local conversion are where margins move.',
-  },
-  {
-    title: 'Victory needs protection after results day.',
-    text: 'Narrative control and governance branding keep the mandate strong long after the count.',
-  },
+const serviceHighlights = [
+  'Campaign strategy for local elections in India',
+  'Political campaign services in Rajasthan and beyond',
+  'Digital election strategy with booth-level execution',
 ];
 
 export const metadata: Metadata = {
-  title: 'Services | End-to-End Political Campaign Management | CampaignX',
+  title: 'Services',
   description:
-    'Explore CampaignX political campaign services for pre-election strategy, campaign execution, post-election management, and governance branding.',
+    'Explore CampaignX services for election campaign management in India, including creative, digital marketing, voter analytics, and booth-level campaign execution.',
+  keywords: campaignKeywords,
 };
 
 export default function ServicesPage() {
@@ -37,105 +26,78 @@ export default function ServicesPage() {
       <Navbar />
 
       <main className="theme-text-primary mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pt-10">
-        <section className="theme-shell relative isolate overflow-hidden rounded-[2rem] border px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.18)] sm:px-8 lg:px-12 lg:py-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,_rgba(229,9,20,0.18),_transparent_28%),radial-gradient(circle_at_right,_rgba(255,255,255,0.06),_transparent_20%)]" />
+        <section className="theme-shell rounded-[2rem] border px-6 py-12 shadow-[0_30px_120px_rgba(0,0,0,0.16)] sm:px-8 lg:px-12">
+          <SectionHeading
+            eyebrow="Services"
+            title="Election campaign services built for candidates who want structure, speed, and better vote conversion."
+            description="CampaignX offers a full-stack election support model for Sarpanch, Nagar Palika, Nagar Parishad, and Nagar Nigam campaigns, combining strategy, creative, ads, data, and execution."
+          />
 
-          <div className="relative">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-400">Services</p>
-            <h1 className="theme-text-primary mt-5 max-w-5xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
-              End-to-End Political Campaign Management
-            </h1>
-            <p className="theme-text-secondary mt-6 max-w-3xl text-lg leading-8 sm:text-xl">
-              From strategy to victory &mdash; we manage your entire political journey
-            </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {serviceHighlights.map((item) => (
+              <div key={item} className="theme-chip rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                {item}
+              </div>
+            ))}
+          </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <CTAButton label="Book Strategy Call" href="/contact" />
-              <Link
-                href="#service-phases"
-                className="theme-button-secondary inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] theme-transition"
-              >
-                Explore The 4 Phases
-              </Link>
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-3">
-              {serviceProofPoints.map((point) => (
-                <div
-                  key={point}
-                  className="theme-chip rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em]"
-                >
-                  {point}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {heroSignals.map((signal) => (
-                <article
-                  key={signal.title}
-                  className="theme-panel rounded-[1.5rem] border p-5 backdrop-blur theme-transition hover:border-red-500/35"
-                >
-                  <h2 className="theme-text-primary font-display text-2xl font-semibold tracking-tight">{signal.title}</h2>
-                  <p className="theme-text-secondary mt-3 text-base leading-7">{signal.text}</p>
-                </article>
-              ))}
-            </div>
+          <div className="mt-8">
+            <ContactActions primaryLabel="Book Consultation" />
           </div>
         </section>
 
-        <section id="service-phases" className="mt-24 sm:mt-28">
+        <section className="mt-24 sm:mt-28">
           <SectionHeading
-            eyebrow="4-Phase Model"
-            title="One campaign partner from positioning to power."
-            description="Each phase is built around outcomes that matter to candidates: stronger trust, better vote conversion, tighter perception control, and long-term political advantage."
+            eyebrow="Service Categories"
+            title="Organized around the campaign systems that decide the election."
+            description="Instead of disconnected services, we structure our work into the four functions every strong campaign needs."
           />
 
-          <div className="mt-10 grid gap-6">
-            {servicePhases.map((phase) => (
-              <ServicePhaseCard key={phase.id} phase={phase} />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {serviceGroups.map((service) => (
+              <article key={service.title} className="theme-panel rounded-[1.75rem] border p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-red-400">Campaign Function</p>
+                <h2 className="theme-text-primary mt-3 font-display text-3xl font-semibold tracking-tight">{service.title}</h2>
+                <p className="theme-text-secondary mt-4 text-base leading-7">{service.summary}</p>
+                <ul className="theme-text-secondary mt-5 grid gap-3 text-sm leading-6 sm:grid-cols-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="theme-panel-soft rounded-2xl border px-4 py-3">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
         </section>
 
         <section className="mt-24 sm:mt-28">
           <SectionHeading
-            eyebrow="Special Capabilities"
-            title="Campaign weapons built for modern political pressure."
-            description="CampaignX combines strategic instinct with high-speed systems so you can see risk early, move faster, and control more of the battlefield."
+            eyebrow="Execution Flow"
+            title="How those services come together inside a live campaign."
+            description="Our service delivery follows the same campaign logic we use on the homepage: research, planning, communication, field action, and optimization."
           />
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-            {specialCapabilities.map((capability) => (
-              <CapabilityCard key={capability.title} capability={capability} />
+          <div className="mt-10 grid gap-5 lg:grid-cols-5">
+            {workProcess.map((phase) => (
+              <article key={phase.step} className="theme-panel rounded-[1.5rem] border p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-red-400">Step {phase.step}</p>
+                <h3 className="theme-text-primary mt-4 font-display text-2xl font-semibold tracking-tight">{phase.title}</h3>
+                <p className="theme-text-secondary mt-4 text-sm leading-7">{phase.description}</p>
+              </article>
             ))}
           </div>
         </section>
 
-        <section id="case-studies" className="mt-24 sm:mt-28">
-          <SectionHeading
-            eyebrow="Case Studies"
-            title="Proof that pressure can be turned into advantage."
-            description="These realistic campaign scenarios show what happens when research, message discipline, booth intelligence, and rapid response move together."
-          />
-
-          <div className="mt-10 grid gap-6">
-            {serviceCaseStudies.map((study, index) => (
-              <VictoryStoryCard key={study.title} study={study} index={index} />
-            ))}
-          </div>
-        </section>
-
-        <section className="theme-panel-accent mt-24 rounded-[2rem] border px-6 py-12 text-center shadow-[0_30px_120px_rgba(0,0,0,0.15)] sm:px-8">
-          <p className="theme-accent-soft text-xs font-semibold uppercase tracking-[0.4em]">Final CTA</p>
-          <h2 className="theme-text-primary mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Ready to Win Your Election?
+        <section className="theme-panel-accent mt-24 rounded-[2rem] border px-6 py-12 sm:px-8">
+          <h2 className="theme-text-primary font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            Need a service mix that fits your election, booth count, and timeline?
           </h2>
-          <p className="theme-text-secondary mx-auto mt-5 max-w-3xl text-lg leading-8">
-            Let&apos;s build your winning strategy.
+          <p className="theme-text-secondary mt-5 max-w-3xl text-lg leading-8">
+            We scope every campaign differently based on seat type, geography, voter complexity, and the intensity of competition.
           </p>
           <div className="mt-8">
-            <CTAButton label="Book Strategy Call" href="/contact" />
+            <ContactActions primaryLabel="Start Your Campaign" />
           </div>
         </section>
       </main>

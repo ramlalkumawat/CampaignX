@@ -9,8 +9,8 @@ export default function CaseStudiesPage() {
       <Navbar />
       <main className="theme-text-primary mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <header className="mb-8 text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-red-500">Case Studies</p>
-          <h1 className="text-4xl font-black">Real Campaign Impact Stories</h1>
+          <p className="text-sm font-medium uppercase tracking-[0.3em] text-red-500">Case Studies</p>
+          <h1 className="font-display text-4xl font-semibold tracking-[0.01em]">Real Campaign Impact Stories</h1>
           <p className="theme-text-secondary">Detailed campaign execution outcomes focusing on reach, engagement, and voter conversion.</p>
         </header>
 
@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
         </section>
 
         <section className="theme-panel-strong mt-10 rounded-2xl border p-6 text-center">
-          <h2 className="text-2xl font-bold">Want Case Studies Aligned to Your Context?</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-[0.01em]">Want Case Studies Aligned to Your Context?</h2>
           <p className="theme-text-secondary mt-2">We produce custom battle plans and metrics roadmaps for your polity, constituency and competition landscape.</p>
           <CTAButton label="Get Winning Strategy" href="/contact" />
         </section>

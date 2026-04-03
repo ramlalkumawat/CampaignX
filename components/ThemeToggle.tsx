@@ -60,7 +60,7 @@ export default function ThemeToggle({ className = '', compact = false }: ThemeTo
       onClick={handleToggle}
       aria-label={label}
       title={label}
-      className={`theme-toggle inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold uppercase tracking-[0.2em] theme-transition ${compact ? 'justify-center' : ''} ${className}`}
+      className={`theme-toggle inline-flex items-center rounded-full border text-sm font-medium uppercase tracking-[0.2em] theme-transition ${compact ? 'justify-center gap-0 px-0 py-0' : 'gap-2 px-3 py-2'} ${className}`}
     >
       <span className="flex h-5 w-5 items-center justify-center">
         {theme === 'dark' ? (

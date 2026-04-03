@@ -10,7 +10,7 @@ export default function CTAButton({ label, href, className = '' }: CTAButtonProp
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center justify-center gap-2 rounded-full border border-red-500 bg-red-600 px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-[0_16px_45px_rgba(229,9,20,0.35)] transition duration-300 hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-500 hover:shadow-[0_20px_55px_rgba(229,9,20,0.5)] active:translate-y-0 ${className}`}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full border border-red-500 bg-red-600 px-6 py-3 text-sm font-medium uppercase tracking-[0.24em] text-white shadow-[0_16px_45px_rgba(229,9,20,0.35)] transition duration-300 hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-500 hover:shadow-[0_20px_55px_rgba(229,9,20,0.5)] active:translate-y-0 ${className}`}
       aria-label={label}
     >
       <span>{label}</span>

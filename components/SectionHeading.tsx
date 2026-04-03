@@ -12,14 +12,18 @@ export default function SectionHeading({
   align = 'left',
 }: SectionHeadingProps) {
   const alignmentClass = align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl';
+  const eyebrowAlignment = align === 'center' ? 'justify-center' : 'justify-start';
 
   return (
     <div className={alignmentClass}>
-      <p className="text-xs font-semibold uppercase tracking-[0.4em] text-red-400">{eyebrow}</p>
-      <h2 className="theme-text-primary mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+      <div className={`flex items-center gap-3 ${eyebrowAlignment}`}>
+        <span className="h-px w-10 bg-gradient-to-r from-red-500 to-transparent" />
+        <p className="text-xs font-medium uppercase tracking-[0.38em] text-red-400">{eyebrow}</p>
+      </div>
+      <h2 className="headline-balance theme-text-primary mt-5 font-display text-3xl font-semibold tracking-[0.01em] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
-      <p className="theme-text-secondary mt-4 text-base leading-7 sm:text-lg">{description}</p>
+      <p className="copy-balance theme-text-secondary mt-5 text-base sm:text-lg">{description}</p>
     </div>
   );
 }
